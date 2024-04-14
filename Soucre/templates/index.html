@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>RỪNG NGẪU NHIÊN</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+ <div class="login">
+	<h1>RỪNG NGẪU NHIÊN</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+	<input type="text" name="sepal_length" placeholder="Sepal length in cm..." required="required" />
+    <input type="text" name="sepal_width" placeholder="Sepal width in cm..." required="required" />
+	<input type="text" name="petal_length" placeholder="Petal length in cm..." required="required" />
+    <input type="text" name="petal_width" placeholder="Petal width in cm..." required="required" />
+    <button type="submit" class="btn">Predict</button>
+    </form>
+   <br>
+   <br>
+   <h3>{{ prediction_text }}</h3>
+ </div>
+</body>
+</html>
